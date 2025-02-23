@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog Home</title>
+</head>
+<body>
+    <h1>Welcome to the Blog</h1>
+    <a href="{{ url_for('create_post') }}">Create a new post</a>
+    <ul>
+        {% for post in posts %}
+            <li><a href="{{ url_for('user_posts', username=post.author.username) }}">{{ post.title }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
